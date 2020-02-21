@@ -7,7 +7,7 @@
 <style lang="scss">
 @import "./scss/reset.scss";
 #app{
-  min-height: 100%;
+  height: 100%;
 }
 </style>
 
