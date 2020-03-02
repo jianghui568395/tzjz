@@ -1,8 +1,8 @@
 <template>
   <div class="home-page" @contextmenu.prevent.stop="contextMenu">
     <!-- <Container></Container> -->
-
-    <!-- 邮件 -->
+    <Page v-for="(o,k) in $store.state.Page.PAGE" :key="k"></Page>
+    <!-- 右键 -->
     <ContextMenu ref="contextMenu"></ContextMenu>
     <!-- 设计器 -->
     <DesignModal v-show="$store.state.Design.toggle"></DesignModal>
@@ -11,7 +11,7 @@
 
 <script>
 // @ is an alias to /src
-import Container from '@/components/Page/Container/Container'
+import Page from '@/components/Page/Page'
 import ContextMenu from "@/components/Design/ContextMenu/ContextMenu";
 import DesignModal from "@/components/Design/DesignModal/DesignModal";
 export default {
@@ -19,7 +19,7 @@ export default {
   components: {
     DesignModal,
     ContextMenu,
-    Container
+    Page
   },
   data () {
     return {
